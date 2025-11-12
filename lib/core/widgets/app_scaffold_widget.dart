@@ -15,6 +15,7 @@ class AppScaffoldWidget extends StatelessWidget {
   final PaddingLevel paddingLevel;
   final FloatingActionButtonLocation? floatingActionButtonLocation;
   final bool resizeToAvoidBottomInset;
+  final bool canLooseFocusOnTapOutside;
 
   const AppScaffoldWidget({
     super.key,
@@ -30,6 +31,7 @@ class AppScaffoldWidget extends StatelessWidget {
     this.paddingLevel = PaddingLevel.medium,
     this.floatingActionButtonLocation,
     this.resizeToAvoidBottomInset = true,
+    this.canLooseFocusOnTapOutside = false,
   });
 
   EdgeInsets _getPadding() {
@@ -55,10 +57,16 @@ class AppScaffoldWidget extends StatelessWidget {
 
     // Always wrap content with SafeArea
     content = SafeArea(
-      child: scrollable
-          ? SingleChildScrollView(child: content)
-          : content,
+      child: scrollable ? SingleChildScrollView(child: content) : content,
     );
+
+    if (canLooseFocusOnTapOutside) {
+      content = GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        behavior: HitTestBehavior.translucent,
+        child: content,
+      );
+    }
 
     return Scaffold(
       appBar: appBar,

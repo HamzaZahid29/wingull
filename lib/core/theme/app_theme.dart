@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wingull/core/theme/app_text_styles.dart';
 
 class AppThemes {
-  static final Color primaryColor = Color(0xFF01095A);
+  static final Color primaryColor = Color(0xFF03A9F4);
   static final Color accentColor = Colors.white;
   static final Color secondaryColor = Colors.grey;
   static final Color lightAccentColor = Colors.black;
@@ -41,12 +42,7 @@ class AppThemes {
       style: ElevatedButton.styleFrom(
         foregroundColor: Colors.white,
         backgroundColor: primaryColor,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
-        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-        textStyle: GoogleFonts.poppins(
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-        ),
+        textStyle: AppTextStyles.button,
       ),
     ),
 
