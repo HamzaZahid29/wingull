@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:wingull/core/constants/app_constants.dart';
+import 'package:wingull/core/router/app_static_routes.dart';
 import 'package:wingull/core/theme/app_text_styles.dart';
 import 'package:wingull/core/widgets/app_animation_wrapper.dart';
 import 'package:wingull/core/widgets/app_elevated_button.dart';
@@ -52,7 +54,9 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           Spacer(),
           AppElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed(AppStaticRoutes.managerHome);
+            },
             title: 'Continue',
             size: AppButtonSize.fullWidth,
             icon: FontAwesome.arrow_right_solid,
