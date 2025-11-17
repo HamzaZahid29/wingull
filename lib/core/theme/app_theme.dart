@@ -4,7 +4,7 @@ import 'package:wingull/core/theme/app_text_styles.dart';
 
 class AppThemes {
   static final Color primaryColor = Color(0xFF03A9F4);
-  static final Color accentColor = Colors.white;
+  static final Color accentColor = Colors.grey.shade200;
   static final Color secondaryColor = Colors.grey;
   static final Color lightAccentColor = Colors.black;
   static final Color scaffoldBackgroundColor = Colors.white;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:wingull/features/manager/home/pages/manager_home.dart';
 
 import '../../features/auth/pages/login_screen.dart';
 import 'app_static_routes.dart';
@@ -24,6 +25,11 @@ final GoRouter appRoutes = GoRouter(
       path: AppStaticRoutes.loginPage,
       name: AppStaticRoutes.loginPage,
       pageBuilder: (context, state) => MaterialPage(child: LoginScreen()),
+    ),
+    GoRoute(
+      path: AppStaticRoutes.managerHome,
+      name: AppStaticRoutes.managerHome,
+      pageBuilder: (context, state) => MaterialPage(child: ManagerHome()),
     ),
   ],
 );
